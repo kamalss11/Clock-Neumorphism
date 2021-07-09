@@ -12,6 +12,11 @@ var mon = document.getElementById("mon")
 var year = document.getElementById("year")
 var month = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
+function toggleClass(){
+    const body = document.querySelector("body")
+    body.classList.toggle("light")
+}
+
 setInterval(() => {
     let day = new Date()
     console.log(day)
