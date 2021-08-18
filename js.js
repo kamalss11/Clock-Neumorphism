@@ -30,7 +30,14 @@ setInterval(() => {
     sec.style.transform = `rotateZ(${ss}deg)`
 
     if(day.getHours() > 12){
-        h.innerHTML = `0${day.getHours() - 12}`
+        var h1 = day.getHours()
+        h1 = `${h1 - 12}`
+        if(h1 < 10){
+            h.innerHTML = `0${h1}`
+        }
+        else{
+            h.innerHTML = `${h1}`
+        }
     }
     else{
         h.innerHTML = day.getHours()
