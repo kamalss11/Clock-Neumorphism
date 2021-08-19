@@ -29,8 +29,19 @@ setInterval(() => {
     mn.style.transform = `rotateZ(${mm}deg)`
     sec.style.transform = `rotateZ(${ss}deg)`
 
-    if(day.getHours() > 12){
-        var h1 = day.getHours()
+    var h1 = day.getHours()
+
+    if(h1 && h1 < 10){
+        h.innerHTML = `0${h1}`
+    }
+    else if(h1 == 0){
+        h.innerHTML = `12`
+    }
+    else{
+        h.innerHTML = `${h1}`
+    }
+
+    if(h1 > 12){
         h1 = `${h1 - 12}`
         if(h1 < 10){
             h.innerHTML = `0${h1}`
@@ -38,9 +49,6 @@ setInterval(() => {
         else{
             h.innerHTML = `${h1}`
         }
-    }
-    else{
-        h.innerHTML = day.getHours()
     }
 
     if(day.getMinutes() < 10){
